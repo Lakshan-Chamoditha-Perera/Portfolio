@@ -2,7 +2,7 @@
    LAKSHAN PERERA — PORTFOLIO
    Neo-brutalist × Swiss-modern. One accent. Light/dark.
    ========================================================================= */
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap");
 :root {
   --paper: #f3f1ec;
   --paper-2: #eae7df;
@@ -20,9 +20,9 @@
   --gut: clamp(20px, 5vw, 64px);
   --base-size: 18px;
 
-  --f-display: "Archivo", system-ui, sans-serif;
-  --f-body: "Space Grotesk", system-ui, sans-serif;
-  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+  --f-display: -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-body: -apple-system, BlinkMacSystemFont, sans-serif;
+  --f-mono: "SF Mono", ui-monospace, monospace;
 
   --glass-amt: 20px;
   --glass-blur: blur(var(--glass-amt)) saturate(185%);
@@ -44,7 +44,7 @@
   --ink-faint: #6f6c64;
   --line: #f4f2ec;
   --line-soft: rgba(244, 242, 236, 0.14);
-  --accent: #ff5a2b;
+  --accent: #eaff00;
   --accent-ink: #120a06;
 
   --glass-tint: rgba(32, 32, 30, 0.44);
@@ -255,12 +255,12 @@ body::before {
 .giant {
   font-family: var(--f-display);
   font-weight: 900;
-  font-stretch: 125%;
+  font-stretch: 110%;
   text-transform: uppercase;
   line-height: 0.8;
   letter-spacing: -0.025em;
   margin: 0;
-  font-size: clamp(55px, 16.5vw, 260px);
+  font-size: clamp(50px, 12vw, 260px);
   white-space: nowrap;
 }
 .giant.bleed {
