@@ -1,39 +1,50 @@
-import { useState, useEffect, useRef } from 'react';
-import { Hero, TabNav, Footer } from './layout';
+import { useState, useEffect, useRef } from "react";
+import { Hero, TabNav, Footer } from "./layout";
 import {
-  AboutPanel, ExperiencePanel, ProjectsPanel,
-  SkillsPanel, EducationPanel, ContactPanel,
-} from './sections';
-import { SettingsPanel } from './ui';
-import data from './data';
+  AboutPanel,
+  ExperiencePanel,
+  ProjectsPanel,
+  SkillsPanel,
+  EducationPanel,
+  ContactPanel,
+} from "./sections";
+import { SettingsPanel } from "./ui";
+import data from "./data";
 
 const PANEL_MAP = {
-  about:      AboutPanel,
+  about: AboutPanel,
   experience: ExperiencePanel,
-  projects:   ProjectsPanel,
-  skills:     SkillsPanel,
-  education:  EducationPanel,
-  contact:    ContactPanel,
+  projects: ProjectsPanel,
+  skills: SkillsPanel,
+  education: EducationPanel,
+  contact: ContactPanel,
 };
 
 export default function App() {
-  const [dark, setDark] = useState(false);
-  const [active, setActive] = useState('about');
+  const [dark, setDark] = useState(true);
+  const [active, setActive] = useState("about");
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [fontSize, setFontSize] = useState('md');
-  const [accent, setAccent] = useState('#ff4d1a');
+  const [fontSize, setFontSize] = useState("md");
+  const [accent, setAccent] = useState("#EAFF00");
   const contentRef = useRef(null);
   const firstRender = useRef(true);
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    document.documentElement.setAttribute(
+      "data-theme",
+      dark ? "dark" : "light",
+    );
   }, [dark]);
 
   useEffect(() => {
-    if (firstRender.current) { firstRender.current = false; return; }
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
     if (contentRef.current) {
-      const top = contentRef.current.getBoundingClientRect().top + window.scrollY - 56;
-      window.scrollTo({ top, behavior: 'smooth' });
+      const top =
+        contentRef.current.getBoundingClientRect().top + window.scrollY - 56;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   }, [active]);
 
@@ -46,8 +57,8 @@ export default function App() {
         active={active}
         setActive={setActive}
         dark={dark}
-        onTheme={() => setDark(d => !d)}
-        onSettings={() => setSettingsOpen(o => !o)}
+        onTheme={() => setDark((d) => !d)}
+        onSettings={() => setSettingsOpen((o) => !o)}
         settingsOpen={settingsOpen}
       />
       {settingsOpen && (
