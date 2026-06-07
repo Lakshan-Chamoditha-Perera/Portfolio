@@ -28,8 +28,7 @@ export default function Hero() {
               <b>{data.title}</b> · Fintech &amp; Distributed Systems<br />
               Java / Spring Boot · React / Next.js · {data.location}
             </div>
-            <span className="arrow hero-arrow-big" aria-hidden="true" />
-          </div>
+            </div>
         </div>
       </div>
       <div className="marquee">

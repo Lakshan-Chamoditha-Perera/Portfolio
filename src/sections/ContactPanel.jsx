@@ -2,10 +2,10 @@ import PanelHead from '../ui/PanelHead';
 
 export default function ContactPanel({ data }) {
   const items = [
-    { k: 'Email',    v: data.email,           href: `mailto:${data.email}` },
-    { k: 'Phone',    v: data.phone,           href: `tel:${data.phone.replace(/\s/g, '')}` },
-    { k: 'LinkedIn', v: '/in/lakshan-perera', href: data.linkedin },
-    { k: 'GitHub',   v: '/lakshanperera',     href: data.github },
+    { k: "Email", v: data.email, href: `mailto:${data.email}` },
+    { k: "Phone", v: data.phone, href: `tel:${data.phone.replace(/\s/g, "")}` },
+    { k: "LinkedIn", v: "/in/Lakshan-Chamoditha-Perera", href: data.linkedin },
+    { k: "GitHub", v: "/Lakshan-Chamoditha-Perera", href: data.github },
   ];
 
   return (
