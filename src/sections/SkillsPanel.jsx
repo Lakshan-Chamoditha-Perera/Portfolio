@@ -1,4 +1,5 @@
 import PanelHead from '../ui/PanelHead';
+import TechChip from '../ui/TechChip';
 
 export default function SkillsPanel({ data }) {
   return (
@@ -14,9 +15,7 @@ export default function SkillsPanel({ data }) {
               </h4>
               <div className="chip-row">
                 {g.items.map((s, j) => (
-                  <span key={j} className={`chip${s.includes('Primary') ? ' accent' : ''}`}>
-                    {s}
-                  </span>
+                  <TechChip key={j} name={s} accent={s.includes('Primary')} />
                 ))}
               </div>
             </div>

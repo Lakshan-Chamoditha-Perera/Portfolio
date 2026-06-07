@@ -1,4 +1,5 @@
 import PanelHead from '../ui/PanelHead';
+import TechChip from '../ui/TechChip';
 
 function ProjectCard({ p }) {
   return (
@@ -10,7 +11,7 @@ function ProjectCard({ p }) {
       <div className="proj-thumb"><span className="cap">{p.cap}</span></div>
       <p className="proj-desc">{p.desc}</p>
       <div className="chip-row">
-        {p.tech.map((t, i) => <span key={i} className="chip">{t}</span>)}
+        {p.tech.map((t, i) => <TechChip key={i} name={t} />)}
       </div>
     </article>
   );

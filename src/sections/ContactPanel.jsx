@@ -1,11 +1,12 @@
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub } from 'react-icons/fa';
 import PanelHead from '../ui/PanelHead';
 
 export default function ContactPanel({ data }) {
   const items = [
-    { k: "Email", v: data.email, href: `mailto:${data.email}` },
-    { k: "Phone", v: data.phone, href: `tel:${data.phone.replace(/\s/g, "")}` },
-    { k: "LinkedIn", v: "/in/Lakshan-Chamoditha-Perera", href: data.linkedin },
-    { k: "GitHub", v: "/Lakshan-Chamoditha-Perera", href: data.github },
+    { k: 'Email',    v: data.email,                      href: `mailto:${data.email}`,                icon: <FaEnvelope  size={18} /> },
+    { k: 'Phone',    v: data.phone,                      href: `tel:${data.phone.replace(/\s/g,'')}`, icon: <FaPhone     size={18} /> },
+    { k: 'LinkedIn', v: '/in/Lakshan-Chamoditha-Perera', href: data.linkedin,                         icon: <FaLinkedin  size={18} /> },
+    { k: 'GitHub',   v: '/Lakshan-Chamoditha-Perera',    href: data.github,                           icon: <FaGithub    size={18} /> },
   ];
 
   return (
@@ -21,16 +22,19 @@ export default function ContactPanel({ data }) {
               target={it.href.startsWith('mailto:') || it.href.startsWith('tel:') ? undefined : '_blank'}
               rel="noopener noreferrer"
             >
-              <span>
-                <span className="cc-k">{it.k}</span>
-                <span className="cc-v">{it.v}</span>
+              <span className="cc-left">
+                <span className="cc-icon">{it.icon}</span>
+                <span>
+                  <span className="cc-k">{it.k}</span>
+                  <span className="cc-v">{it.v}</span>
+                </span>
               </span>
               <span className="cc-arrow">↗</span>
             </a>
           ))}
         </div>
-        <p style={{ fontFamily: 'var(--f-mono)', fontSize: '12px', letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginTop: '28px' }}>
-          Based in {data.location} · Open to remote & on-site roles · References on request
+        <p className="cc-note">
+          Based in {data.location} · Open to remote &amp; on-site roles · References on request
         </p>
       </div>
     </section>
