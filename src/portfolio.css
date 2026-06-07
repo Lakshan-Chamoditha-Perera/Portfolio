@@ -378,6 +378,9 @@ body::before {
 
 /* --- tablet landscape (≤ 1024px) ----------------------------------------- */
 @media (max-width: 1024px) {
+  /* 19.5vw overflows the wrap at tablet widths; 17vw keeps name fully visible */
+  .giant { font-size: clamp(2.4rem, 17vw, 17rem); }
+
   /* Narrow the fixed skill label column so chips don't crowd */
   .skill-group { grid-template-columns: 180px 1fr; }
 }
