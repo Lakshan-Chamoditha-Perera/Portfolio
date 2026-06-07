@@ -4,6 +4,7 @@ import {
   AboutPanel, ExperiencePanel, ProjectsPanel,
   SkillsPanel, EducationPanel, ContactPanel,
 } from './sections';
+import { SettingsPanel } from './ui';
 import data from './data';
 
 const PANEL_MAP = {
@@ -18,6 +19,9 @@ const PANEL_MAP = {
 export default function App() {
   const [dark, setDark] = useState(false);
   const [active, setActive] = useState('about');
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [fontSize, setFontSize] = useState('md');
+  const [accent, setAccent] = useState('#ff4d1a');
   const contentRef = useRef(null);
   const firstRender = useRef(true);
 
@@ -38,7 +42,23 @@ export default function App() {
   return (
     <>
       <Hero />
-      <TabNav active={active} setActive={setActive} dark={dark} onTheme={() => setDark(d => !d)} />
+      <TabNav
+        active={active}
+        setActive={setActive}
+        dark={dark}
+        onTheme={() => setDark(d => !d)}
+        onSettings={() => setSettingsOpen(o => !o)}
+        settingsOpen={settingsOpen}
+      />
+      {settingsOpen && (
+        <SettingsPanel
+          onClose={() => setSettingsOpen(false)}
+          accent={accent}
+          setAccent={setAccent}
+          fontSize={fontSize}
+          setFontSize={setFontSize}
+        />
+      )}
       <main ref={contentRef}>
         <Panel key={active} data={data} />
       </main>
