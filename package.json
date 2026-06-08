@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://lakshan-chamoditha-perera.github.io/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
